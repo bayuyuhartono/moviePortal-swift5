@@ -12,6 +12,8 @@
 		2E2D19B72C61442100B5CBFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2D19B62C61442100B5CBFE /* Assets.xcassets */; };
 		2E2D19BA2C61442100B5CBFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2D19B92C61442100B5CBFE /* Preview Assets.xcassets */; };
 		2E2D19C42C6144D900B5CBFE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D19C32C6144D900B5CBFE /* Constants.swift */; };
+		2E6FFE8F2C62805E009A5FF0 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6FFE8E2C62805E009A5FF0 /* Carousel.swift */; };
+		2E6FFE912C62807A009A5FF0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6FFE902C62807A009A5FF0 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		2E2D19B62C61442100B5CBFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E2D19B92C61442100B5CBFE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2E2D19C32C6144D900B5CBFE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2E6FFE8E2C62805E009A5FF0 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		2E6FFE902C62807A009A5FF0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 		2E2D19C02C61443000B5CBFE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2E6FFE8D2C628039009A5FF0 /* Components */,
+				2E6FFE902C62807A009A5FF0 /* HomeView.swift */,
 				2E2D19B42C61442000B5CBFE /* MainView.swift */,
 			);
 			path = Views;
@@ -84,6 +90,14 @@
 				2E2D19C32C6144D900B5CBFE /* Constants.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		2E6FFE8D2C628039009A5FF0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2E6FFE8E2C62805E009A5FF0 /* Carousel.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +172,8 @@
 			files = (
 				2E2D19B52C61442000B5CBFE /* MainView.swift in Sources */,
 				2E2D19B32C61442000B5CBFE /* movieportalApp.swift in Sources */,
+				2E6FFE8F2C62805E009A5FF0 /* Carousel.swift in Sources */,
+				2E6FFE912C62807A009A5FF0 /* HomeView.swift in Sources */,
 				2E2D19C42C6144D900B5CBFE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
