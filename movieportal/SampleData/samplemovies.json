@@ -1,0 +1,64 @@
+[
+    {
+        "adult": false,
+        "backdrop_path": "/9l1eZiJHmhr5jIlthMdJN5WYoff.jpg",
+        "genre_ids": [
+            28,
+            35,
+            878
+        ],
+        "id": 533535,
+        "original_language": "en",
+        "original_title": "Deadpool & Wolverine",
+        "overview": "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
+        "popularity": 12303.037,
+        "poster_path": "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+        "release_date": "2024-07-24",
+        "title": "Deadpool & Wolverine",
+        "video": false,
+        "vote_average": 7.906,
+        "vote_count": 1551
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/3q01ACG0MWm0DekhvkPFCXyPZSu.jpg",
+        "genre_ids": [
+            28,
+            80,
+            53,
+            35
+        ],
+        "id": 573435,
+        "original_language": "en",
+        "original_title": "Bad Boys: Ride or Die",
+        "overview": "After their late former Captain is framed, Lowrey and Burnett try to clear his name, only to end up on the run themselves.",
+        "popularity": 3497.983,
+        "poster_path": "/oGythE98MYleE6mZlGs5oBGkux1.jpg",
+        "release_date": "2024-06-05",
+        "title": "Bad Boys: Ride or Die",
+        "video": false,
+        "vote_average": 7.657,
+        "vote_count": 1399
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/lgkPzcOSnTvjeMnuFzozRO5HHw1.jpg",
+        "genre_ids": [
+            16,
+            10751,
+            35,
+            28
+        ],
+        "id": 519182,
+        "original_language": "en",
+        "original_title": "Despicable Me 4",
+        "overview": "Gru and Lucy and their girls—Margo, Edith and Agnes—welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Gru also faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, forcing the family to go on the run.",
+        "popularity": 3253.012,
+        "poster_path": "/wWba3TaojhK7NdycRhoQpsG0FaH.jpg",
+        "release_date": "2024-06-20",
+        "title": "Despicable Me 4",
+        "video": false,
+        "vote_average": 7.324,
+        "vote_count": 731
+    }
+]

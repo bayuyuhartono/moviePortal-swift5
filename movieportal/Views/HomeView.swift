@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    let vm = HomeViewModel()
+    
     var body: some View {
         VStack {
-            Carousel(imageNames: ["https://www.komar.de/media/cms/fileadmin/user_upload/Category/Fototapeten/Marvel/komar-fototapeten-marvel.jpg", "https://asikcuy.com/wp-content/uploads/2021/04/justice-league.jpg"])
+            Carousel(data: vm.movies)
+            Spacer()
         }
+        .preferredColorScheme(.dark)
     }
 }
 
