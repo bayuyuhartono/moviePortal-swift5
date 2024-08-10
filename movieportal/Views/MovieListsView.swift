@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MovieListsView: View {
     let category: CategoryItems
-    private let listsData: [MovieModel] = HomeViewModel().popularMovies
+    let vm = MovieListViewModel()
     private let adaptiveColumn = [
         GridItem(.adaptive(minimum: 150))
     ]
@@ -18,11 +18,10 @@ struct MovieListsView: View {
         NavigationStack {
             ScrollView{
                 LazyVGrid(columns: adaptiveColumn, spacing: 20) {
-                    ForEach(listsData) { item in
+                    ForEach(vm.movieLists) { item in
                         MovieCard(cardData: item)
                     }
                 }
-                
             }
             .padding(16)
             .background(Color.uiBlack)
@@ -36,6 +35,9 @@ struct MovieListsView: View {
         }
         .font(.title)
         .foregroundColor(.uiSmoke)
+        .task {
+            await vm.getPopularData(for: category.path)
+        }
     }
 }
 

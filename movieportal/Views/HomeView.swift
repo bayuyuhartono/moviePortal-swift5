@@ -22,6 +22,8 @@ struct HomeView: View {
                 
                 CategoryGroupLabel(categoryData: CategoryItems.topRated)
                 Bricks(bricksData: vm.topRatedMovies)
+                
+                Spacer(minLength: 40)
 
             }
             .padding(.top, 16)
@@ -42,6 +44,11 @@ struct HomeView: View {
             .background(Color.uiBlack)
         }
         .preferredColorScheme(.dark)
+        .task {
+            await vm.getPopularData()
+            await vm.getNowPlaying()
+            await vm.getTopRated()
+        }
     }
 }
 

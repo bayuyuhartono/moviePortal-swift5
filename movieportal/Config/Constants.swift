@@ -17,7 +17,7 @@ enum TabbedItems: Int, CaseIterable{
         case .home:
             return "Home"
         case .bookmark:
-            return "Bookmark"
+            return "Search"
         case .profile:
             return "Profile"
         }
@@ -28,7 +28,7 @@ enum TabbedItems: Int, CaseIterable{
         case .home:
             return "movieclapper"
         case .bookmark:
-            return "bookmark"
+            return "magnifyingglass.circle"
         case .profile:
             return "person.circle"
         }

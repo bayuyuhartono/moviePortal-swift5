@@ -19,6 +19,7 @@ struct Bricks: View {
                     }
                 }
                 .padding(.horizontal, 16)
+                .padding(.bottom, 16)
             }
         }
         .padding(.vertical, 8)
@@ -26,6 +27,6 @@ struct Bricks: View {
 }
 
 #Preview {
-    Bricks(bricksData: HomeViewModel().popularMovies)
+    Bricks(bricksData: HomeViewModel().sampleMovies)
         .preferredColorScheme(.dark)
 }

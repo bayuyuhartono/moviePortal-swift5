@@ -44,5 +44,5 @@ struct MovieCard: View {
 }
 
 #Preview {
-    MovieCard(cardData: HomeViewModel().popularMovies[0])
+    MovieCard(cardData: HomeViewModel().sampleMovies[0])
 }

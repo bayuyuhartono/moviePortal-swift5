@@ -16,7 +16,7 @@ struct MainView: View {
                 HomeView()
                     .tag(0)
                     .toolbar(.hidden, for: .tabBar)
-                Text("Bookmark")
+                Text("Search")
                     .tag(1)
                     .toolbar(.hidden, for: .tabBar)
                 Text("Profile")

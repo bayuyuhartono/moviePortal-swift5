@@ -13,19 +13,20 @@ class HomeViewModel {
     
     private let fetcher = FetchService()
     
+    var sampleMovies: [MovieModel]
     var popularMovies: [MovieModel] = []
     var nowPlayingMovies: [MovieModel] = []
     var topRatedMovies: [MovieModel] = []
     
     init() {
-        Task {
-            await getPopularData()
-            await getNowPlaying()
-            await getTopRated()
-        }
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let sampleData = try! Data(contentsOf: Bundle.main.url(forResource: "samplemovies", withExtension: "json")!)
+        sampleMovies = try! decoder.decode([MovieModel].self, from: sampleData)
     }
     
-    private func getPopularData() async {
+    func getPopularData() async {
         status = .fetching
         
         do {
@@ -37,7 +38,7 @@ class HomeViewModel {
         }
     }
     
-    private func getNowPlaying() async {
+    func getNowPlaying() async {
         status = .fetching
         
         do {
@@ -49,7 +50,7 @@ class HomeViewModel {
         }
     }
     
-    private func getTopRated() async {
+    func getTopRated() async {
         status = .fetching
         
         do {

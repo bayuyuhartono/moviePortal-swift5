@@ -36,7 +36,8 @@ struct Carousel: View {
             }
             .padding(.top, 8)
         }
-        .padding(.vertical, 8)
+        .padding(.top, 8)
+        .padding(.bottom, 16)
         .onReceive(timer) { _ in
             if carouselData.count > 0 {
                 withAnimation(.default) {
@@ -48,6 +49,6 @@ struct Carousel: View {
 }
 
 #Preview {
-    Carousel(carouselData: HomeViewModel().popularMovies)
+    Carousel(carouselData: HomeViewModel().sampleMovies)
         .preferredColorScheme(.dark)
 }
