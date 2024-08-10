@@ -10,12 +10,14 @@ import SwiftUI
 struct Carousel: View {
     @State private var selectedImageIndex: Int = 0
 
-    var data: [MovieModel]
-    let timer = Timer.publish(every: 3.0, on: .main, in: .common).autoconnect()
+    let title: String
+    let data: [MovieModel]
     let imageBaseURL = ProcessInfo.processInfo.environment["IMAGE_BASE_URL"] ?? "defaultURL"
+    let timer = Timer.publish(every: 3.0, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        ZStack {
+        VStack {
+            GroupLabel(text: title)
             TabView(selection: $selectedImageIndex) {
                 ForEach(0..<data.count, id: \.self) { index in
                     let element = data[index]
@@ -41,15 +43,17 @@ struct Carousel: View {
                                 .font(.headline)
                                 .foregroundStyle(.white)
                         }
-                        .padding()
+                        .padding(.leading, 32)
+                        .padding(.bottom, 16)
                     }
                     .scaledToFill()
-                    .frame(width: 350, height: 195)
+                    .frame(width: 360)
                     .background(.ultraThinMaterial)
                     .shadow(radius: 20)
                     .cornerRadius(8.0)
                 }
             }
+            .frame(height: 220)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
 
             HStack {
@@ -61,10 +65,10 @@ struct Carousel: View {
                             selectedImageIndex = index
                         }
                 }
-                .offset(y: 115)
             }
+            .padding(.top, 8)
         }
-        .frame(height: 250)
+        .padding(.vertical, 8)
         .onReceive(timer) { _ in
             withAnimation(.default) {
                 selectedImageIndex = (selectedImageIndex + 1) % data.count
@@ -74,6 +78,6 @@ struct Carousel: View {
 }
 
 #Preview {
-    Carousel(data: HomeViewModel().movies)
+    Carousel(title: "Popular", data: HomeViewModel().popularMovies)
         .preferredColorScheme(.dark)
 }

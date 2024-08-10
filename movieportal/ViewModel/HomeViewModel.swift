@@ -9,13 +9,13 @@ import Foundation
 
 @Observable
 class HomeViewModel {
-    var movies: [MovieModel]
+    var popularMovies: [MovieModel]
     
     init() {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
         let moviesData = try! Data(contentsOf: Bundle.main.url(forResource: "samplemovies", withExtension: "json")!)
-        movies = try! decoder.decode([MovieModel].self, from: moviesData)
+        popularMovies = try! decoder.decode([MovieModel].self, from: moviesData)
     }
 }

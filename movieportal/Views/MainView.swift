@@ -13,13 +13,17 @@ struct MainView: View {
     var body: some View {
         ZStack(alignment: .bottom){
             TabView(selection: $selectedTab) {
-                Text("Home")
+                HomeView()
                     .tag(0)
+                    .toolbar(.hidden, for: .tabBar)
                 Text("Bookmark")
                     .tag(1)
+                    .toolbar(.hidden, for: .tabBar)
                 Text("Profile")
                     .tag(2)
+                    .toolbar(.hidden, for: .tabBar)
             }
+
             ZStack{
                 HStack{
                     ForEach((TabbedItems.allCases), id: \.self){ item in
@@ -32,11 +36,13 @@ struct MainView: View {
                 }
                 .padding(8)
             }
-            .frame(height: 50)
+            .frame(height: 60)
             .background(.uiCharcoal)
-            .cornerRadius(35)
-            .padding(.horizontal, 26)
+            .cornerRadius(40)
+            .padding(.horizontal, 32)
         }
+        .padding(.bottom, 16)
+        .ignoresSafeArea()
         .preferredColorScheme(.dark)
     }
 }
@@ -58,9 +64,9 @@ extension MainView{
             }
             Spacer()
         }
-        .frame(width: isActive ? .infinity : 60, height: 40)
+        .frame(width: isActive ? .infinity : 60, height: 50)
         .background(isActive ? .uiYellow : .clear)
-        .cornerRadius(30)
+        .cornerRadius(40)
     }
 }
 
