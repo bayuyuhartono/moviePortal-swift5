@@ -12,10 +12,17 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                Carousel(title: "Popular", data: vm.popularMovies)
-                Bricks(title: "Now Playing", data: vm.popularMovies)
-                Bricks(title: "Upcoming", data: vm.popularMovies)
+            ScrollView(.vertical, showsIndicators: false) {
+                
+                CategoryGroupLabel(categoryData: CategoryItems.popular)
+                Carousel(carouselData: vm.popularMovies)
+                
+                CategoryGroupLabel(categoryData: CategoryItems.nowPlaying)
+                Bricks(bricksData: vm.nowPlayingMovies)
+                
+                CategoryGroupLabel(categoryData: CategoryItems.topRated)
+                Bricks(bricksData: vm.topRatedMovies)
+
             }
             .padding(.top, 16)
             .toolbar {
@@ -31,15 +38,6 @@ struct HomeView: View {
                         .background(.uiYellow)
                         .cornerRadius(8)
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "magnifyingglass.circle")
-                            .font(.title)
-                            .foregroundColor(.uiSmoke)
-                    }
-                }
             }
             .background(Color.uiBlack)
         }
@@ -50,3 +48,4 @@ struct HomeView: View {
 #Preview {
     HomeView()
 }
+

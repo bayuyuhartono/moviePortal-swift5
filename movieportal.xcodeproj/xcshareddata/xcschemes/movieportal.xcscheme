@@ -52,8 +52,8 @@
       </BuildableProductRunnable>
       <EnvironmentVariables>
          <EnvironmentVariable
-            key = "API_READ_ACCESS_TOKEN"
-            value = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MzZhMWYyODg0ZjJiZGM2NTYxMDQ5YWJmNTRkYTVhMyIsIm5iZiI6MTcyMzA5NjU2Ny43MTM3MTgsInN1YiI6IjVkOTZiYzY3NjYxMWI0MDAyOTFmOTY5ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.YiVxkhoP_ucCHpSCdcrO5oXQRIEd_JAtyYt6wo7Snb4"
+            key = "TOKEN"
+            value = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MzZhMWYyODg0ZjJiZGM2NTYxMDQ5YWJmNTRkYTVhMyIsIm5iZiI6MTcyMzE5MjI4Mi41MzA4NTQsInN1YiI6IjVkOTZiYzY3NjYxMWI0MDAyOTFmOTY5ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ENfjrr-gTFG9ljFlwnfBmuq9chvGdUkvBRMehBXMSNQ"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable

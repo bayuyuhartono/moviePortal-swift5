@@ -5,12 +5,12 @@
 
 import Foundation
 
-struct MovieModel: Decodable {
+struct MovieModel: Decodable, Identifiable {
     let adult: Bool
     let backdropPath: String
     let genreIds: [Int]
     let id: Int
-    let originalLanguage: OriginalLanguage
+    let originalLanguage: String
     let originalTitle, overview: String
     let popularity: Double
     let posterPath, releaseDate, title: String
@@ -34,8 +34,7 @@ struct MovieModel: Decodable {
     }
 }
 
-enum OriginalLanguage: String, Decodable {
-    case en = "en"
-    case ja = "ja"
-    case ko = "ko"
+struct MovieResponse: Decodable {
+    let page: Int16
+    let results: [MovieModel]
 }

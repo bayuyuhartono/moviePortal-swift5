@@ -64,7 +64,7 @@ extension MainView{
             }
             Spacer()
         }
-        .frame(width: isActive ? .infinity : 60, height: 50)
+        .frame(width: isActive ? 170 : 60, height: 50)
         .background(isActive ? .uiYellow : .clear)
         .cornerRadius(40)
     }
