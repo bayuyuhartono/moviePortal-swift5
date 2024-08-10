@@ -35,4 +35,26 @@ struct FetchService {
         
         return movies.results
     }
+    
+    func fetchSearchMovie(keyword: String) async throws -> [MovieModel] {
+        let searchMovieURL = baseURL.appending(path: "/search/movie")
+            .appending(queryItems: [URLQueryItem(name: "query", value: keyword)])
+        var request = URLRequest(url: searchMovieURL)
+        request.addValue("application/json", forHTTPHeaderField: "accept")
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "GET"
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+                
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw FetchError.badResponse
+        }
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let movies = try decoder.decode(MovieResponse.self, from: data)
+        
+        return movies.results
+    }
 }
