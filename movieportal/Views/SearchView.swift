@@ -10,28 +10,30 @@ import SwiftUI
 struct SearchView: View {
     @State var searchText = ""
     
-    let vm = SearchViewModel()
+    let searchVm = SearchViewModel()
     
     let debouncer = Debouncer(delay: 0.5)
     
     func search(query: String) async {
-        await vm.getSearchData(for: query)
+        await searchVm.getSearchData(for: query)
     }
     
     var body: some View {
         NavigationStack {
-            if vm.searchMovies.count > 0 {
-                ScrollView(.vertical, showsIndicators: false) {
-                    ForEach(vm.searchMovies) { item in
+            ScrollView(.vertical, showsIndicators: false) {
+                if searchVm.searchMovies.count > 0 {
+                    ForEach(searchVm.searchMovies) { item in
                         MovieWideCard(cardData: item)
                             .padding(.vertical, 4)
                     }
+                } else {
+                    Text("Please enter your search text")
+                        .foregroundStyle(.uiSmoke)
+                        .padding(.vertical, 32)
                 }
-                .frame(width: 500)
-                .background(Color.uiBlack)
-            } else {
-                Text("Please enter your search text")
             }
+            .frame(width: 500)
+            .background(Color.uiBlack)
         }
         .ignoresSafeArea()
         .searchable(text: $searchText)

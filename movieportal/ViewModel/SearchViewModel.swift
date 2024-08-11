@@ -20,7 +20,7 @@ class SearchViewModel {
         
         do {
             searchMovies = try await fetcher.fetchSearchMovie(keyword: keyword)
-            status = .successPopular
+            status = .successSearch
         } catch {
             print(error)
             status = .failed(error: error)

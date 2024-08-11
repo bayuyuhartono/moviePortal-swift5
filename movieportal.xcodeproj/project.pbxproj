@@ -28,6 +28,9 @@
 		2E93DAA52C663BFA00C7DEB2 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E93DAA42C663BFA00C7DEB2 /* MovieModel.swift */; };
 		2E93DAA72C667C5200C7DEB2 /* samplemovies.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E93DAA62C667C5200C7DEB2 /* samplemovies.json */; };
 		2E93DAAA2C667D7100C7DEB2 /* FetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E93DAA92C667D7100C7DEB2 /* FetchService.swift */; };
+		2EA2D4A32C691F660092E860 /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA2D4A22C691F660092E860 /* MovieDetailModel.swift */; };
+		2EA2D4A52C6921650092E860 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA2D4A42C6921650092E860 /* MovieDetailViewModel.swift */; };
+		2EF9C0A52C6927590041A003 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF9C0A42C6927590041A003 /* MovieDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		2E93DAA42C663BFA00C7DEB2 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		2E93DAA62C667C5200C7DEB2 /* samplemovies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = samplemovies.json; sourceTree = "<group>"; };
 		2E93DAA92C667D7100C7DEB2 /* FetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchService.swift; sourceTree = "<group>"; };
+		2EA2D4A22C691F660092E860 /* MovieDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModel.swift; sourceTree = "<group>"; };
+		2EA2D4A42C6921650092E860 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		2EF9C0A42C6927590041A003 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				2E6FFE8D2C628039009A5FF0 /* Components */,
+				2EF9C0A42C6927590041A003 /* MovieDetailView.swift */,
 				2E4033252C674F2E00C5272C /* MovieListsView.swift */,
 				2E6FFE902C62807A009A5FF0 /* HomeView.swift */,
 				2E6029BC2C67D8D0004E088C /* SearchView.swift */,
@@ -153,6 +160,7 @@
 				2E31A93C2C67B28D00071776 /* MovieListViewModel.swift */,
 				2E93DAA12C663A0F00C7DEB2 /* HomeViewModel.swift */,
 				2E6029BE2C67D8FB004E088C /* SearchViewModel.swift */,
+				2EA2D4A42C6921650092E860 /* MovieDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				2E93DAA42C663BFA00C7DEB2 /* MovieModel.swift */,
+				2EA2D4A22C691F660092E860 /* MovieDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,8 +265,10 @@
 				2E40332A2C6765F100C5272C /* MovieWideCard.swift in Sources */,
 				2E93DAAA2C667D7100C7DEB2 /* FetchService.swift in Sources */,
 				2E2D19B52C61442000B5CBFE /* MainView.swift in Sources */,
+				2EA2D4A32C691F660092E860 /* MovieDetailModel.swift in Sources */,
 				2E31A93D2C67B28D00071776 /* MovieListViewModel.swift in Sources */,
 				2E93DAA22C663A0F00C7DEB2 /* HomeViewModel.swift in Sources */,
+				2EF9C0A52C6927590041A003 /* MovieDetailView.swift in Sources */,
 				2E4033222C671F0500C5272C /* CategoryGroupLabel.swift in Sources */,
 				2E2D19B32C61442000B5CBFE /* movieportalApp.swift in Sources */,
 				2E4033262C674F2E00C5272C /* MovieListsView.swift in Sources */,
@@ -268,6 +279,7 @@
 				2E6029BB2C67CACD004E088C /* Sample.swift in Sources */,
 				2E4033282C674FCF00C5272C /* MovieCard.swift in Sources */,
 				2E6029BD2C67D8D0004E088C /* SearchView.swift in Sources */,
+				2EA2D4A52C6921650092E860 /* MovieDetailViewModel.swift in Sources */,
 				2E6FFE912C62807A009A5FF0 /* HomeView.swift in Sources */,
 				2E2D19C42C6144D900B5CBFE /* Constants.swift in Sources */,
 				2E93DAA52C663BFA00C7DEB2 /* MovieModel.swift in Sources */,

@@ -79,5 +79,7 @@ enum FetchStatus {
     case successPopular
     case successNowPlaying
     case successTopRated
+    case successSearch
+    case successDetail
     case failed(error: Error)
 }

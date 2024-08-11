@@ -13,20 +13,13 @@ struct MovieWideCard: View {
     
     var body: some View {
         ZStack(alignment: .bottomLeading) {
-            AsyncImage(
-                url: URL(string: "\(imageBaseURL)\(cardData.backdropPath ?? "")"),
-                transaction: Transaction(animation: .default),
-                content: { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .scaledToFill()
-                    }
-                    else {
-                        ProgressView()
-                    }
-                }
-            )
+            AsyncImage(url: URL(string: "\(imageBaseURL)\(cardData.backdropPath ?? "")")) { image in
+                image
+                    .resizable()
+                    .scaledToFill()
+            } placeholder: {
+                ProgressView()
+            }
             VStack(alignment: .leading) {
                 HStack(alignment: .bottom) {
                     Image(systemName: "star.fill")

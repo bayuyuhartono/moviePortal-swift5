@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct HomeView: View {
-    let vm = HomeViewModel()
+    let homeVm = HomeViewModel()
     
     var body: some View {
         NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
                 
                 CategoryGroupLabel(categoryData: CategoryItems.popular)
-                Carousel(carouselData: vm.popularMovies)
+                Carousel(carouselData: homeVm.popularMovies)
                 
                 CategoryGroupLabel(categoryData: CategoryItems.nowPlaying)
-                Bricks(bricksData: vm.nowPlayingMovies)
+                Bricks(bricksData: homeVm.nowPlayingMovies)
                 
                 CategoryGroupLabel(categoryData: CategoryItems.topRated)
-                Bricks(bricksData: vm.topRatedMovies)
+                Bricks(bricksData: homeVm.topRatedMovies)
                 
                 Spacer(minLength: 40)
 
@@ -45,9 +45,9 @@ struct HomeView: View {
         }
         .preferredColorScheme(.dark)
         .task {
-            await vm.getPopularData()
-            await vm.getNowPlaying()
-            await vm.getTopRated()
+            await homeVm.getPopularData()
+            await homeVm.getNowPlaying()
+            await homeVm.getTopRated()
         }
     }
 }
