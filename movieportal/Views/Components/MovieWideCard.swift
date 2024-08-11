@@ -9,17 +9,24 @@ import SwiftUI
 
 struct MovieWideCard: View {
     let cardData: MovieModel
-    let imageBaseURL = ProcessInfo.processInfo.environment["IMAGE_BASE_URL"] ?? "defaultURL"
+    let imageBaseURL = ProcessInfo.processInfo.environment["IMAGE_BASE_URL"] ?? ""
     
     var body: some View {
         ZStack(alignment: .bottomLeading) {
-            AsyncImage(url: URL(string: "\(imageBaseURL)\(cardData.backdropPath)")) { image in
-                image
-                    .resizable()
-                    .scaledToFill()
-            } placeholder: {
-                ProgressView()
-            }
+            AsyncImage(
+                url: URL(string: "\(imageBaseURL)\(cardData.backdropPath ?? "")"),
+                transaction: Transaction(animation: .default),
+                content: { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    }
+                    else {
+                        ProgressView()
+                    }
+                }
+            )
             VStack(alignment: .leading) {
                 HStack(alignment: .bottom) {
                     Image(systemName: "star.fill")

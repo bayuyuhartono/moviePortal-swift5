@@ -13,13 +13,20 @@ struct MovieCard: View {
     
     var body: some View {
         ZStack(alignment: .topLeading) {
-            AsyncImage(url: URL(string: "\(imageBaseURL)\(cardData.posterPath)")) { image in
-                image
-                    .resizable()
-                    .scaledToFill()
-            } placeholder: {
-                ProgressView()
-            }
+            AsyncImage(
+                url: URL(string: "\(imageBaseURL)\(cardData.posterPath ?? "")"),
+                transaction: Transaction(animation: .default),
+                content: { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    }
+                    else {
+                        ProgressView()
+                    }
+                }
+            )
             HStack() {
                 Image(systemName: "star.fill")
                     .foregroundColor(.uiYellow)

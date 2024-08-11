@@ -15,7 +15,7 @@ class SearchViewModel {
     
     var searchMovies: [MovieModel] = []
     
-    func getPopularData(for keyword: String) async {
+    func getSearchData(for keyword: String) async {
         status = .fetching
         
         do {

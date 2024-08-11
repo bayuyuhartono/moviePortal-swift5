@@ -15,26 +15,27 @@ struct SearchView: View {
     let debouncer = Debouncer(delay: 0.5)
     
     func search(query: String) async {
-        await vm.getPopularData(for: query)
+        await vm.getSearchData(for: query)
     }
     
     var body: some View {
         NavigationStack {
-            ScrollView(.vertical, showsIndicators: false) {
-                ForEach(vm.searchMovies) { item in
-                    MovieWideCard(cardData: item)
-                        .padding(.vertical, 4)
+            if vm.searchMovies.count > 0 {
+                ScrollView(.vertical, showsIndicators: false) {
+                    ForEach(vm.searchMovies) { item in
+                        MovieWideCard(cardData: item)
+                            .padding(.vertical, 4)
+                    }
                 }
+                .frame(width: 500)
+                .background(Color.uiBlack)
+            } else {
+                Text("Please enter your search text")
             }
-            .padding(16)
-            .background(Color.uiBlack)
         }
         .ignoresSafeArea()
         .searchable(text: $searchText)
         .preferredColorScheme(.dark)
-        .task {
-            await vm.getPopularData(for: "batman")
-        }
         .onChange(of: searchText) { oldValue, newValue in
             debouncer.debounce {
                 Task{
