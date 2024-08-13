@@ -15,6 +15,16 @@ class MovieDetailViewModel {
     
     var detailMovie: MovieDetailModel? = nil
     var similarMovies: [MovieModel] = []
+    var sampleDetail: MovieDetailModel
+    
+    init() {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let sampleData = try! Data(contentsOf: Bundle.main.url(forResource: "sampledetail", withExtension: "json")!)
+        sampleDetail = try! decoder.decode(MovieDetailModel.self, from: sampleData)
+    }
+
     
     func getDetailData(for id: String) async {
         status = .fetching

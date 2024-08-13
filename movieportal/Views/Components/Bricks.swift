@@ -28,5 +28,4 @@ struct Bricks: View {
 
 #Preview {
     Bricks(bricksData: HomeViewModel().sampleMovies)
-        .preferredColorScheme(.dark)
 }
