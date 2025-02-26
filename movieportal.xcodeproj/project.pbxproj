@@ -105,16 +105,8 @@
 				2E93DAA32C663BBF00C7DEB2 /* Model */,
 				2E93DAA02C660AC300C7DEB2 /* SampleData */,
 				2E2D19B62C61442100B5CBFE /* Assets.xcassets */,
-				2E2D19B82C61442100B5CBFE /* Preview Content */,
 			);
 			path = movieportal;
-			sourceTree = "<group>";
-		};
-		2E2D19B82C61442100B5CBFE /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		2E2D19C02C61443000B5CBFE /* Views */ = {
